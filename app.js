@@ -29,7 +29,7 @@ app.post('/posts',postController.createPost);
 app.put('/posts/:id', postController.updatePost);
 app.delete('posts/:id',postController.deletePost);
 
-const port =4000;
+const port =process.env.PORT ||5000;
 app.listen(port,()=>{
     console.log(`server starting this port ${port}`)
 })
