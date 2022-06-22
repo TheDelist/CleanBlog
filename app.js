@@ -27,6 +27,15 @@ app.get('/addpost',async(req,res)=>{
     res.render('addpost')
   
 });
+app.get('/posts/:id',async (req,res)=>{
+    //const blog = { id: 1, title: "Blog title", description: "Blog description" }
+   // res.send(blog)
+  const post=await Post.findById(req.params.id);
+  res.render('post',{
+    post
+  })
+  // res.redirect('/')
+});
 app.post('/posts',async (req,res)=>{
     //const blog = { id: 1, title: "Blog title", description: "Blog description" }
    // res.send(blog)

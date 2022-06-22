@@ -9,20 +9,20 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
 
-            <% posts.forEach(element => { %>
+            <% for (let i =0; i < posts.length; i++) { %>
               <div class="post-preview">
-                <a href="post.html">
+                <a href="/posts/<%= posts[i]._id %>"
                   <h2 class="post-title">
-                    <%= element.title %> 
+                    <%= posts[i].title %> 
                   </h2>
                 </a>
-                <label for=""> <%= element.detail %></label>
+                <label for=""> <%= posts[i].detail %></label>
                 <p class="post-meta">Writed by
                   <a href="#">Nuhgnc</a>
-                  on <%= element.dateCreated %> </p>
+                  on <%= posts[i].dateCreated %> </p>
               </div>
               <hr>
-            <% }) %>
+            <% } %>
     
        
         <br>
